@@ -1,4 +1,6 @@
 windows_plugin/
 dumps/
+node_modules/
 *.pyc
 __pycache__
+extension/dist/

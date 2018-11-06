@@ -1,0 +1,13 @@
+{
+  "name": "Unofficial IA For Linux",
+  "version": "1.0",
+  "description": "An unofficial implementation of the NHS IA Authentication system for Linux",
+  "background": {"scripts": ["background.js"], "persistent": true},
+  "manifest_version": 2,
+  "permissions": [
+    "nativeMessaging",
+    "webRequest",
+    "webRequestBlocking",
+    "https://*.ncrs.nhs.uk/*"
+  ]
+}
