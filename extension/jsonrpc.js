@@ -3,6 +3,12 @@ export function nativeJsonrpc(endpoint) {
   return jsonRpc(port)
 }
 
+export function localJsonrpc(extension, name) {
+  let extensionId = extension || chrome.runtime.id
+  let port = chrome.runtime.connect(extensionId, {name})
+  return jsonRpc(port)
+}
+
 export function jsonRpc(port) {
   let awaitingRequests = {}
   port.onMessage.addListener(({id, result, error}) => {
@@ -22,5 +28,22 @@ export function jsonRpc(port) {
         })
       }
     }
+  })
+}
+
+export function jsonRpcServer(port, handler) {
+  port.onMessage.addListener(async ({id, method, params}) => {
+    try {
+      let result = await handler[method].apply(handler, params)
+      port.postMessage({id, result, error: null, jsonrpc: '2.0'})
+    } catch (e) {
+      port.postMessage({id, result: null, error: {msg: e.toString(), stack: e.stack}, jsonrpc: '2.0'})
+    }
+  })
+}
+
+export function jsonRpcListen(handler, name) {
+  chrome.runtime.onConnect.addListener(port => {
+    if (port.name === name) jsonRpcServer(port, handler)
   })
 }

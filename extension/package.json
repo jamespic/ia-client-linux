@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build --no-cache --no-minify background.js && cp manifest.json dist/manifest.json"
+    "build": "parcel build --no-cache --no-minify background.js && parcel build --public-url . --no-cache --no-minify popup.pug  && cp manifest.json dist/manifest.json"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "choo": "^6.13.1",
+    "hyperscript": "^2.0.2",
     "isomorphic-fetch": "^2.2.1",
     "parcel-bundler": "^1.10.3"
   },
-  "browserslist": "chrome >= 66"
+  "browserslist": "chrome >= 66",
+  "devDependencies": {
+    "pug": "^2.0.3"
+  }
 }

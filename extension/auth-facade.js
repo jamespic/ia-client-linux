@@ -13,15 +13,20 @@ function identifier() {
 }
 
 class AuthFacade {
-  constructor(cardApi, env = 'live') {
+  constructor(cardApi) {
     this._cardApi = cardApi
-    this.endpoint = environments[env]
     this.token = null
     this.session = null
     this.uid = null
   }
 
-  async logon(pin) {
+  async unlock(pin) {
+    this.uid = await this._cardApi.login(pin)
+    return this.uid
+  }
+
+  async logon(env = 'live') {
+    this.endpoint = environments[env]
     this.session = identifier()
     let activateResult = await fetch(
       `${this.endpoint}/login/authactivate`, {
@@ -41,7 +46,6 @@ class AuthFacade {
     let incomingSignature = /<gpPARAM name="signature">([^<]+)<\/gpPARAM>/.exec(activateData)[1]
     let challenge = /<gpPARAM name="challenge">([^<]+)<\/gpPARAM>/.exec(activateData)[1]
 
-    this.uid = await this._cardApi.login(pin)
     let challengeResponse = await this._cardApi.sign(challenge)
 
     let validateResult = await fetch(
@@ -95,10 +99,23 @@ class AuthFacade {
     this.role = this.roles[roleId]
   }
 
+  async status() {
+    let result = {unlocked: this.uid !== null}
+    if (result.unlocked) {
+      result.token = this.token
+      result.roles = this.roles
+    }
+    if (this.role) {
+      result.role = this.role
+    }
+    return result
+  }
+
   async logoff() {
-    let result = await fetch(this._logoutUrl, {
-      method: 'POST',
-      data: `<?xml version="1.0" encoding="UTF-8"?>
+    if (this._logoutUrl) {
+      let result = await fetch(this._logoutUrl, {
+        method: 'POST',
+        data: `<?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE USER SYSTEM "gpOBJECT.DTD">
         <gpOBJECT>
         <gpPARAM name="service">LOGOUT</gpPARAM>
@@ -107,7 +124,19 @@ class AuthFacade {
         <gpPARAM name="device_id">${this.session},ClientIP=127.0.0.1</gpPARAM>
         <gpPARAM name="uid">${this.uid}</gpPARAM>
         </gpOBJECT>`
-    })
+      })
+      this.session = null
+      this.token = null
+      this.roles = null
+      this.role = null
+      this._logoutUrl = null
+    }
+
+    if (this.uid) {
+      await this._cardApi.logout()
+      this.uid = null
+    }
+
   }
 }
 
