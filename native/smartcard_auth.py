@@ -7,7 +7,7 @@ import asn1crypto.x509 as x509
 
 
 
-SMIME_HEADER = """MIME-Version: 1.0
+SMIME_HEADER = b"""MIME-Version: 1.0
 Content-Disposition: attachment; filename="smime.p7m"
 Content-Type: application/x-pkcs7-mime; name="smime.p7m"
 Content-Transfer-Encoding: base64
@@ -61,7 +61,7 @@ class SmartcardAuth:
             )
             return SMIME_HEADER + base64.encodebytes(
                 _envelope(challenge_bin, self._cert, signature)
-            ).decode('ascii')
+            )
 
     def logout(self):
         self._session.logout()
