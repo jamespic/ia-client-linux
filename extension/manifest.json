@@ -9,8 +9,7 @@
   "manifest_version": 2,
   "permissions": [
     "nativeMessaging",
-    "webRequest",
-    "webRequestBlocking",
+    "storage",
     "https://*.ncrs.nhs.uk/*"
   ]
 }

@@ -47,6 +47,7 @@ class AuthFacade:
         self.token = None
         self.session = None
         self.uid = None
+        self.role = None
         self._logout_url = None
 
     def unlock(self, pin):
@@ -146,6 +147,8 @@ class AuthFacade:
             'unlocked': self.uid is not None
         }
         if self.uid is not None:
+            result['uid'] = self.uid
+        if self.token is not None:
             result['token'] = self.token
             result['roles'] = self.roles
         if self.role is not None:

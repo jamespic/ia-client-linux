@@ -13,7 +13,8 @@
     "choo": "^6.13.1",
     "hyperscript": "^2.0.2",
     "isomorphic-fetch": "^2.2.1",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "tachyons": "^4.11.1"
   },
   "browserslist": "chrome >= 66",
   "devDependencies": {
