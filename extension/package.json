@@ -9,6 +9,9 @@
   },
   "author": "",
   "license": "MIT",
+  "browser": {
+    "assert": "./microassert.js"
+  },
   "dependencies": {
     "choo": "^6.13.1",
     "hyperscript": "^2.0.2",

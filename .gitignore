@@ -4,3 +4,4 @@ node_modules/
 *.pyc
 __pycache__
 extension/dist/
+yarn-error.log
