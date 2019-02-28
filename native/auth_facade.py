@@ -144,6 +144,7 @@ class AuthFacade:
 
     def status(self):
         result = {
+            'card_present': self._card_api.card_present(),
             'unlocked': self.uid is not None
         }
         if self.uid is not None:

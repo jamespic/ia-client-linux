@@ -1,5 +1,6 @@
 import {localJsonrpc} from './jsonrpc'
 import choo from 'choo'
+import noCard from './templates/no-card'
 import error from './templates/error'
 import waiting from './templates/waiting'
 import unlock from './templates/unlock'
@@ -18,6 +19,7 @@ app.use(createEffects(auth, permission))
 function mainRoute(state, emit) {
   if (state.error) {return error(state, emit)}
   else if (state.waiting) {return waiting(state, emit)}
+  else if (!state.status.card_present) {return noCard(state, emit)}
   else if (!state.status.unlocked) {return unlock(state, emit)}
   else if (state.status.token == null) {return selectEnvironment(state, emit)}
   else if (false /* FIXME: handle permissions */) {return requestPermission(state, emit)}

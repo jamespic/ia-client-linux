@@ -1,6 +1,6 @@
 export default function createEffects(auth, permission) {
   return function effects(state, emitter, app) {
-    state.status = {unlocked: false}
+    state.status = {unlocked: false, card_present: false}
 
     async function refreshStatus() {
       let status = await auth.status()

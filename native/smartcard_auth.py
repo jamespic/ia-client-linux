@@ -14,6 +14,8 @@ Content-Transfer-Encoding: base64
 
 """
 
+class SlotException(Exception):
+    pass
 
 class SmartcardAuth:
     def __init__(self):
@@ -25,27 +27,43 @@ class SmartcardAuth:
         self._private_key = None
 
     def login(self, pin):
-        for slot in self._pkcs.getSlotList():
-            self._session = self._pkcs.openSession(
-                slot,
-                PyKCS11.CKF_SERIAL_SESSION | PyKCS11.CKF_RW_SESSION
-            )
-            self._session.login(pin, PyKCS11.CKU_USER)
+        slot = self._find_slot()
+        self._session = self._pkcs.openSession(
+            slot,
+            PyKCS11.CKF_SERIAL_SESSION | PyKCS11.CKF_RW_SESSION
+        )
+        self._session.login(pin, PyKCS11.CKU_USER)
 
-            self._private_key = [
-                key for key in self._session.findObjects([
-                    (PyKCS11.CKA_CLASS, PyKCS11.CKO_PRIVATE_KEY)
-                ]) if key.to_dict()['CKA_DECRYPT']
-            ][0]
-            key_id = self._private_key.to_dict()['CKA_ID']
+        self._private_key = [
+            key for key in self._session.findObjects([
+                (PyKCS11.CKA_CLASS, PyKCS11.CKO_PRIVATE_KEY)
+            ]) if key.to_dict()['CKA_DECRYPT']
+        ][0]
+        key_id = self._private_key.to_dict()['CKA_ID']
 
-            auth_cert = self._session.findObjects([
-                (PyKCS11.CKA_CLASS, PyKCS11.CKO_CERTIFICATE),
-                (PyKCS11.CKA_ID, key_id)
-            ])[0].to_dict()
-            self._cert = bytes(auth_cert['CKA_VALUE'])
-            self._uid = _get_uid_from_subject(bytes(auth_cert['CKA_SUBJECT']))
-            return self._uid
+        auth_cert = self._session.findObjects([
+            (PyKCS11.CKA_CLASS, PyKCS11.CKO_CERTIFICATE),
+            (PyKCS11.CKA_ID, key_id)
+        ])[0].to_dict()
+        self._cert = bytes(auth_cert['CKA_VALUE'])
+        self._uid = _get_uid_from_subject(bytes(auth_cert['CKA_SUBJECT']))
+        return self._uid
+
+    def _find_slot(self):
+        slots = self._pkcs.getSlotList()
+        if not slots:
+            raise SlotException("No smartcard reader found")
+        for slot in slots:
+            if self._pkcs.getSlotInfo(1).flags & PyKCS11.CKF_TOKEN_PRESENT:
+                return slot
+        raise SlotException("No smartcard found in any slot")
+
+    def card_present(self):
+        try:
+            self._find_slot()
+            return True
+        except SlotException:
+            return False
 
     def uid(self):
         return self._uid
