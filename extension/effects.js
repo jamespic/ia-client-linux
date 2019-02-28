@@ -43,6 +43,7 @@ export default function createEffects(auth, permission) {
 
     emitter.on('dismiss-error', async () => {
       state.error = undefined
+      emitter.emit('render')
     })
 
     async function loginTaskWrapper(action) {

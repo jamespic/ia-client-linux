@@ -13,7 +13,23 @@ export function jsonRpc(port) {
   let awaitingRequests = {}
   port.onMessage.addListener(({id, result, error}) => {
     if (id in awaitingRequests) {
-      if (error != null) awaitingRequests[id].reject(new Error(error))
+      if (error != null) {
+        let newErr
+        switch (typeof error) {
+          case 'string':
+            newErr = new Error(error)
+            break
+          case 'object':
+            newErr = new Error(error.msg)
+            newErr.name = error.name
+            newErr.stack = error.stack
+            break
+          default:
+            newErr = new Error()
+            break
+        }
+        awaitingRequests[id].reject(newErr)
+      }
       else awaitingRequests[id].resolve(result)
     }
   })
@@ -37,7 +53,7 @@ export function jsonRpcServer(port, handler) {
       let result = await handler[method].apply(handler, params)
       port.postMessage({id, result, error: null, jsonrpc: '2.0'})
     } catch (e) {
-      port.postMessage({id, result: null, error: {msg: e.toString(), stack: e.stack}, jsonrpc: '2.0'})
+      port.postMessage({id, result: null, error: {name: e.name, msg: e.message, stack: e.stack}, jsonrpc: '2.0'})
     }
   })
 }
