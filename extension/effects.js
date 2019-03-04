@@ -1,10 +1,12 @@
-export default function createEffects(auth, permission) {
-  return function effects(state, emitter, app) {
+export function createAuthEffects(auth) {
+  return function authEffects(state, emitter, app) {
     state.status = {unlocked: false, card_present: false}
 
     async function refreshStatus() {
-      let status = await auth.status()
-      state.status = status
+      await loginTaskWrapper(async () => {
+        let status = await auth.status()
+        state.status = status
+      })
       emitter.emit('render')
     }
     emitter.on('refresh-status', refreshStatus)
@@ -62,5 +64,37 @@ export default function createEffects(auth, permission) {
         emitter.emit('render')
       }
     }
+  }
+}
+
+export function createTokenGuardianEffects(tokenGuardian, browser) {
+  return function tokenGuardianEffects(state, emitter, app) {
+    state.originsAwaitingTokens = []
+    async function refreshOriginsAwaitingTokens() {
+      state.originsAwaitingTokens = await tokenGuardian.originsAwaitingTokens()
+      emitter.emit('render')
+    }
+    refreshOriginsAwaitingTokens()
+
+    emitter.on('approve-token', async (origin) => {
+      await tokenGuardian.approveToken(origin)
+      refreshOriginsAwaitingTokens()
+    })
+
+    emitter.on('deny-token', async (origin) => {
+      await tokenGuardian.denyToken(origin)
+      refreshOriginsAwaitingTokens()
+    })
+
+    emitter.on('logoff', async () => {
+      await tokenGuardian.clearApprovals()
+    })
+  }
+}
+
+export default function createEffects(auth, tokenGuardian, browser) {
+  return function effects(state, emitter, app) {
+    createAuthEffects(auth)(state, emitter, app)
+    createTokenGuardianEffects(tokenGuardian, browser)(state, emitter, app)
   }
 }

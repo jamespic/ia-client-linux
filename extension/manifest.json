@@ -6,10 +6,16 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://*.ncrs.nhs.uk/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
   "manifest_version": 2,
   "permissions": [
     "nativeMessaging",
-    "storage",
     "https://*.ncrs.nhs.uk/*"
   ]
 }

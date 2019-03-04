@@ -8,10 +8,10 @@ export default function unlock(state, emit) {
     h('form',
       {onsubmit: (e) => {
         e.preventDefault()
-        emit('enter-pin', pin)
+        emit('enter-pin', e.target.elements.pin.value)
       }},
       h('div.mb1',
-        h('input.br2.w4.pa1.mb1#pin', {type: 'password', onchange: (e) => {pin = e.target.value}})
+        h('input.br2.w4.pa1.mb1#pin', {type: 'password', name: 'pin'})
       ),
       h('div.mb1',
         h('button.br2.pa1.mb1', {type: 'submit'}, 'Unlock')

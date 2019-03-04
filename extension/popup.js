@@ -10,11 +10,11 @@ import loggedIn from './templates/logged-in'
 import createEffects from './effects'
 
 let auth = localJsonrpc(null, 'AUTH')
-let permission = localJsonrpc(null, 'PERMISSION')
+let tokenGuardian = localJsonrpc(null, 'TOKEN_GUARDIAN')
 
 let app = choo()
 
-app.use(createEffects(auth, permission))
+app.use(createEffects(auth, tokenGuardian, chrome))
 
 function mainRoute(state, emit) {
   if (state.error) {return error(state, emit)}
@@ -22,7 +22,7 @@ function mainRoute(state, emit) {
   else if (!state.status.card_present) {return noCard(state, emit)}
   else if (!state.status.unlocked) {return unlock(state, emit)}
   else if (state.status.token == null) {return selectEnvironment(state, emit)}
-  else if (false /* FIXME: handle permissions */) {return requestPermission(state, emit)}
+  else if (state.originsAwaitingTokens.length > 0 && state.status.role != null) {return requestPermission(state, emit)}
   else {return loggedIn(state, emit)}
 }
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build --no-cache --no-minify background.js && parcel build --public-url . --no-cache --no-minify popup.pug  && cp manifest.json dist/manifest.json"
+    "build": "parcel build --no-cache --no-minify injected.js && parcel build --no-cache --no-minify content.js && parcel build --no-cache --no-minify background.js && parcel build --public-url . --no-cache --no-minify popup.pug  && cp manifest.json dist/manifest.json"
   },
   "author": "",
   "license": "MIT",

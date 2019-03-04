@@ -156,6 +156,9 @@ class AuthFacade:
             result['role'] = self.role
         return result
 
+    def get_token(self):
+        return self.token
+
     def logoff(self):
         if self._logout_url:
             with urlopen(
