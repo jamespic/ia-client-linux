@@ -1,9 +1,0 @@
-{
-  "name": "io.github.jamespic.ia_extension",
-  "description": "IA Extension For Linux",
-  "path": "/home/james/workspace/ia-plugin-linux/native/card_native_messaging.py",
-  "type": "stdio",
-  "allowed_origins": [
-    "chrome-extension://llpmkeehllgdogbgemjmfmelahmdogen/"
-  ]
-}
