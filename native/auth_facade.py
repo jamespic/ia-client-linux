@@ -70,7 +70,7 @@ class AuthFacade:
                     <gpPARAM name="service">ACTIVATION</gpPARAM>
                     </gpOBJECT>''' % (self.session, self.session),
                 headers=HEADERS
-            )
+            ), context=ssl_ctx
         ) as activate_result:
             activate_data = activate_result.read()
             incoming_signature = find_param('signature', activate_data)
@@ -103,7 +103,7 @@ class AuthFacade:
                              self.uid.encode('utf-8'),
                              base64.b64encode(challenge_response)),
                 headers=HEADERS
-            )
+            ), context=ssl_ctx
         ) as validate_result:
             validate_data = validate_result.read()
             self.roles = {}
@@ -130,7 +130,7 @@ class AuthFacade:
                     self=self, token=quote(self.token), role_id=role_id
                 ),
                 headers=HEADERS
-            )
+            ), context=ssl_ctx
         ) as result:
             result_data = result.read()
             if b'OK' not in result_data:
@@ -178,7 +178,7 @@ class AuthFacade:
                                  self.session,
                                  self.uid.encode('utf-8')),
                     headers=HEADERS
-                )
+                ), context=ssl_ctx
             ) as result:
                 result.read()
                 self.session = None
