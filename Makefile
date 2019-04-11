@@ -4,7 +4,7 @@
 build: extension/dist.crx
 
 extension/dist.crx: extension/dist
-	chromium-browser --pack-extension=extension/dist --pack-extension-key=extension/dist.pem
+	chromium-browser --pack-extension=extension/dist --pack-extension-key=extension/dist.pem && chmod a+r extension/dist.crx
 
 extension/dist:
 	cd extension && yarn install && yarn build
