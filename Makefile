@@ -4,7 +4,8 @@
 build: extension/dist.crx
 
 extension/dist.crx: extension/dist
-	chromium-browser --pack-extension=extension/dist --pack-extension-key=extension/dist.pem && chmod a+r extension/dist.crx
+	chromium-browser --disable-sandbox --disable-namespace-sandbox --pack-extension=extension/dist --pack-extension-key=extension/dist.pem
+	chmod a+r extension/dist.crx
 
 extension/dist:
 	cd extension && yarn install && yarn build
