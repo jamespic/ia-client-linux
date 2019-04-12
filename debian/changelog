@@ -1,5 +1,13 @@
+ia-plugin-linux (0.1.1-1) bionic; urgency=medium
+
+  * Expand README
+  * Fix issue with Chrome native messaging location
+  * bump version
+
+ -- James Pickering <james_pic@hotmail.com>  Fri, 12 Apr 2019 15:56:15 +0100
+
 ia-plugin-linux (0.1.0-1) bionic; urgency=medium
 
   * Create from upstream
 
- -- James Pickering <james@james-laptop>  Fri, 12 Apr 2019 10:49:01 +0100
+ -- James Pickering <james_pic@hotmail.com>  Fri, 12 Apr 2019 10:49:01 +0100
