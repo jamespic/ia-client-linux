@@ -19,4 +19,6 @@ apt-ftparchive sources . | gzip > Sources.gz
 make_release
 popd
 
+pushd dists/bionic
 make_release
+popd
