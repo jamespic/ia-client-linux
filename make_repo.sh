@@ -1,25 +1,22 @@
 #!/bin/bash
+pushd dists/bionic
+
 make_release() {
-  rm Release Release.gpg InRelease
-  apt-ftparchive release . > /tmp/Release
-  cp /tmp/Release Release
-  gpg --clearsign -o InRelease Release
-  gpg -abs -o Release.gpg Release
+  rm "$1/Release" "$1/Release.gpg" "$1/InRelease"
+  apt-ftparchive release "$1" > /tmp/Release
+  cp /tmp/Release "$1/Release"
+  gpg --clearsign -o "$1/InRelease" "$1/Release"
+  gpg -abs -o "$1/Release.gpg" "$1/Release"
 }
 
-for packagedir in dists/bionic/unofficial/binary-*
+for packagedir in unofficial/binary-*
 do
-  pushd "$packagedir"
-  apt-ftparchive packages . | tee Packages | gzip > Packages.gz
-  make_release
-  popd
+  apt-ftparchive packages "$packagedir" | tee "$packagedir/Packages" | gzip > "$packagedir/Packages.gz"
+  make_release "$packagedir"
 done
 
-pushd dists/bionic/unofficial/source
-apt-ftparchive sources . | tee Sources | gzip > Sources.gz
-make_release
-popd
+apt-ftparchive sources unofficial/source | tee unofficial/source/Sources | gzip > unofficial/source/Sources.gz
+make_release unofficial/source
 
-pushd dists/bionic
-make_release
+make_release .
 popd

@@ -8,6 +8,7 @@ Standards-Version: 4.1.2
 Build-Depends: debhelper (>= 10), nodejs (>= 11.0), yarn
 Homepage: https://github.com/jamespic/ia-client-linux
 Vcs-Git: https://github.com/jamespic/ia-client-linux.git
+Directory: unofficial/source
 Package-List:
  ia-plugin-linux deb unknown optional arch=all
 Files:
