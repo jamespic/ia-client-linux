@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build --no-cache --no-minify injected.js && parcel build --no-cache --no-minify content.js && parcel build --no-cache --no-minify background.js && parcel build --public-url . --no-cache --no-minify popup.pug  && cp manifest.json dist/manifest.json"
+    "build": "parcel build --no-cache --no-minify injected.js && parcel build --no-cache --no-minify content.js && parcel build --no-cache --no-minify background.js && parcel build --public-url . --no-cache --no-minify popup.pug  && cp manifest.json dist/manifest.json",
+    "crx": "crx3 -p dist.pem dist"
   },
   "author": "",
   "license": "MIT",
@@ -16,11 +17,12 @@
     "choo": "^6.13.3",
     "hyperscript": "^2.0.2",
     "isomorphic-fetch": "^2.2.1",
-    "parcel-bundler": "^1.12.3",
     "tachyons": "^4.11.1"
   },
   "browserslist": "chrome >= 66",
   "devDependencies": {
+    "crx3": "^1.0.1",
+    "parcel-bundler": "^1.12.3",
     "pug": "^2.0.3"
   }
 }
