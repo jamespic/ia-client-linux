@@ -1,0 +1,37 @@
+Package: ia-plugin-linux
+Architecture: all
+Version: 0.1.0-1
+Priority: optional
+Section: unknown
+Maintainer: James Pickering <james.pickering@airelogic.com>
+Installed-Size: 153
+Depends: python3-asn1crypto, ifdokccid, python3-pykcs11, python3-dev, pcscd, libclassicclient, libssl0.9.8
+Suggests: chromium-browser | google-chrome
+Filename: ./ia-plugin-linux_0.1.0-1_all.deb
+Size: 113404
+MD5sum: 1c2e206db2d5ca8da369d1f68c123adb
+SHA1: db90dea0835ab6838854933025773d382ce8b08a
+SHA256: 3e4bf09b3d9d10a98336cad850d76fda12893e7d0f2b20da800506dcbbc1bb6a
+SHA512: 536b954dc2dbd8af8600ab807599e4a175e3be66d3ee17ffd1eba2b37d325e62bdf7331ed3ccf835b54c96da2b1ee00f9fe3ea077626acd6adb3284a9642d595
+Homepage: https://github.com/jamespic/ia-client-linux
+Description: A Chrome extension to enable smartcard login to NHS Digital systems
+ A totally unofficial Chrome (and Chromium) extension, to enable smartcard login
+ to systems that work with NHS Digital Identity Agent.
+
+Package: ifdokccid
+Architecture: all
+Version: 4.2.8-1
+Priority: optional
+Section: unknown
+Maintainer: Rob Dyke <rob@neovahealth.co.uk>
+Installed-Size: 1148
+Filename: ./ifdokccid_4.2.8-1_all.deb
+Size: 295166
+MD5sum: f11d8dd0fab428891ef55fa4fc38612f
+SHA1: 7d79d33f85af8ffd11042e959e64c3abf92919ce
+SHA256: 58a038b2af079f8b7958c353f35c4bf01fb474783bcefe053f4eb9069e366e1f
+SHA512: 3974bb84f49404cc5f215d4532a2933fef3588bae15cd08c62666c96903514cf43b576523c712f2ac61b2928233bd27d8a2499d1872b44c058b4dac195f64460
+Description: HID Global Omnikey drivers
+ NHSbuntu packaged CCID / PCSC drivers for
+ OMNIKEY 512X, 532X, 1021, 3X21, 6121 readers
+

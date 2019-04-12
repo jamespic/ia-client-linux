@@ -1,0 +1,29 @@
+Package: ia-plugin-linux
+Format: 3.0 (quilt)
+Binary: ia-plugin-linux
+Architecture: all
+Version: 0.1.0-1
+Maintainer: James Pickering <james.pickering@airelogic.com>
+Standards-Version: 4.1.2
+Build-Depends: debhelper (>= 10), nodejs (>= 11.0), yarn
+Homepage: https://github.com/jamespic/ia-client-linux
+Vcs-Git: https://github.com/jamespic/ia-client-linux.git
+Package-List:
+ ia-plugin-linux deb unknown optional arch=all
+Files:
+ 2ac1bef86c5686d8146807a00b527fba 1301 ia-plugin-linux_0.1.0-1.dsc
+ 64f58a627b5a5868e5a9328a068a233a 83435 ia-plugin-linux_0.1.0.orig.tar.gz
+ f7ec6a00a75cfcd1523ffd7cff8c7f05 2064 ia-plugin-linux_0.1.0-1.debian.tar.xz
+Checksums-Sha1:
+ 9fd25244b7c317210b87793865dce79bc7ec1577 1301 ia-plugin-linux_0.1.0-1.dsc
+ 9e065b33b8c0abae4f52c0b313881311598da4d3 83435 ia-plugin-linux_0.1.0.orig.tar.gz
+ 265dc3e58e1e06609f61fe2a6f9c85dd3a544789 2064 ia-plugin-linux_0.1.0-1.debian.tar.xz
+Checksums-Sha256:
+ 111ab45f7ae88cf74a7ca3c34722ebd213a5fa54f92085a73bf4291a198ec111 1301 ia-plugin-linux_0.1.0-1.dsc
+ 83c000cf98b9f48425c8dfbbe92f023f03cb012086c021b05295052a31d3fa98 83435 ia-plugin-linux_0.1.0.orig.tar.gz
+ a9b8b440c419e30aa176cf69650dfb34d62b8bed331ecdf43e0312ec9a6556b5 2064 ia-plugin-linux_0.1.0-1.debian.tar.xz
+Checksums-Sha512:
+ 2ee53574ca32148edd73dd9356feb1371a378d4860b3de405abc11dae3f72e523c9f222446456ebe00312ec6998328cdcbcce0c58d5ee6defef647f4a1de2978 1301 ia-plugin-linux_0.1.0-1.dsc
+ 51d5037b38010a02abf39a5b3b76fcb52de86599d9df1fe943540438c9f9708bb102df06503911188beae8619bdbf0318384ecd25957d1f1edaab0aaf5890b27 83435 ia-plugin-linux_0.1.0.orig.tar.gz
+ 8a8d15b75f6df4b99bfb4addbc5a32596927a25a1509f7d592e79de68c190f6d65ed434ee4133d94dadc0a8d4e8618bf4398949e7d7054fcc21d47ddcdd2b5ab 2064 ia-plugin-linux_0.1.0-1.debian.tar.xz
+
