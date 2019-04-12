@@ -28,3 +28,33 @@ Checksums-Sha512:
  51d5037b38010a02abf39a5b3b76fcb52de86599d9df1fe943540438c9f9708bb102df06503911188beae8619bdbf0318384ecd25957d1f1edaab0aaf5890b27 83435 ia-plugin-linux_0.1.0.orig.tar.gz
  8a8d15b75f6df4b99bfb4addbc5a32596927a25a1509f7d592e79de68c190f6d65ed434ee4133d94dadc0a8d4e8618bf4398949e7d7054fcc21d47ddcdd2b5ab 2064 ia-plugin-linux_0.1.0-1.debian.tar.xz
 
+Package: ia-plugin-linux
+Format: 3.0 (quilt)
+Binary: ia-plugin-linux
+Architecture: all
+Version: 0.1.1-1
+Maintainer: James Pickering <james.pickering@airelogic.com>
+Standards-Version: 4.1.2
+Build-Depends: debhelper (>= 10), nodejs (>= 11.0), yarn
+Homepage: https://github.com/jamespic/ia-client-linux
+Vcs-Git: https://github.com/jamespic/ia-client-linux.git
+Directory: dists/bionic/unofficial/source
+Package-List:
+ ia-plugin-linux deb unknown optional arch=all
+Files:
+ 54b1216a0adb372f50ee7eb93695ee06 1301 ia-plugin-linux_0.1.1-1.dsc
+ 1d1f560c6ea4ac280268cb45663c98e0 83722 ia-plugin-linux_0.1.1.orig.tar.gz
+ 0f1e65fcc64904a5b44fcbc15bb8052b 2132 ia-plugin-linux_0.1.1-1.debian.tar.xz
+Checksums-Sha1:
+ 01db0b260e992075fa0942237d915b1ed36a6c5d 1301 ia-plugin-linux_0.1.1-1.dsc
+ 9da78402df81e406a61b554e982b3eaa07d94685 83722 ia-plugin-linux_0.1.1.orig.tar.gz
+ 749a5f135b68182caaa0d9d13477e47c43e69cd0 2132 ia-plugin-linux_0.1.1-1.debian.tar.xz
+Checksums-Sha256:
+ 540128a397c45c2a1fba6b0bd54d2bbbf094ba8fd9cfefadf5406b45d22c0f28 1301 ia-plugin-linux_0.1.1-1.dsc
+ 66eafebc2a22f5958d6c7700bed9e677271c55b3fb09d910dc846fc0a34872ec 83722 ia-plugin-linux_0.1.1.orig.tar.gz
+ 85146ed943e1e9ca4d4104e06e154f4c7d9b44184df45dde9e40ce28a555a23f 2132 ia-plugin-linux_0.1.1-1.debian.tar.xz
+Checksums-Sha512:
+ f948012dcbe3c5a98f5f1da412d52ae3cff8ded36859ebbb8c6e9634f776ea3d70449e90eaf4263787ac923ec94a5457f729362e4107360ac41c9f4e61ba3818 1301 ia-plugin-linux_0.1.1-1.dsc
+ 3e7eeae5abf3e1942f8986a932d7b18ba9458654410476fbe3fa83cb4e472fec7fbc45c35559cc4aa6a8c8271bbaa0d459a0e2046cecdcecde9c7dab95944a75 83722 ia-plugin-linux_0.1.1.orig.tar.gz
+ b3555b848919426d533cab99a9606772659470a645402ace9048dbde5a7aef798914979a0d1189682b17ef770a4acc04e66b97a5cce77e37c31fbd97152f040f 2132 ia-plugin-linux_0.1.1-1.debian.tar.xz
+
