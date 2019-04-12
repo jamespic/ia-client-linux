@@ -1,0 +1,16 @@
+Source: ia-plugin-linux
+Section: unknown
+Priority: optional
+Maintainer: James Pickering <james.pickering@airelogic.com>
+Build-Depends: debhelper (>= 10), nodejs (>= 11.0), yarn
+Standards-Version: 4.1.2
+Homepage: https://github.com/jamespic/ia-client-linux
+Vcs-Git: https://github.com/jamespic/ia-client-linux.git
+
+Package: ia-plugin-linux
+Architecture: all
+Depends: ${misc:Depends}, python3-asn1crypto, ifdokccid, python3-pykcs11, python3-dev, pcscd, libclassicclient, libssl0.9.8
+Suggests: chromium-browser | google-chrome
+Description: A Chrome extension to enable smartcard login to NHS Digital systems
+ A totally unofficial Chrome (and Chromium) extension, to enable smartcard login
+ to systems that work with NHS Digital Identity Agent.
