@@ -17,4 +17,4 @@ done
 apt-ftparchive sources "$basedir/source" | tee "$basedir/source/Sources" | gzip > "$basedir/source/Sources.gz"
 #make_release "$basedir/source"
 
-make_release .
+make_release "$basedir"

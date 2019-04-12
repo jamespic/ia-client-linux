@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 12 Apr 2019 13:56:14 +0000
+MD5Sum:
+ c7db1aa8832ce8203ef0da755a04d65e             1654 binary-all/Packages
+ e0bf9f2e74dac4a475f1dd710f440fb5              972 binary-all/Packages.gz
+ 895027628f2c1a9495712f14276459d7             2418 binary-amd64/Packages
+ 977dbf1e7eb63045e4b5a9a3547b8e90             1306 binary-amd64/Packages.gz
+ 3b5deea49f993b2e625911dfdff3e0f2             1800 source/Sources
+ 9a4938440437a794494095796495b9a0              902 source/Sources.gz
+SHA1:
+ 25615cea163af417f167ecc70e44aa1dfa40a7d5             1654 binary-all/Packages
+ e9ac295aa8d02c780f311bbe3c09cbda1f7eef6a              972 binary-all/Packages.gz
+ a9bbf83bae2eaec357f9fc6272eda0cc29689ca7             2418 binary-amd64/Packages
+ 6498dc43b67ccbc9dbdceae01b5a71c304e0c319             1306 binary-amd64/Packages.gz
+ 73a393bdc5e7738c5e1de8e5e4d2121a3126313b             1800 source/Sources
+ e49afe42e9ed8eef2b6752d3611d8122d6009329              902 source/Sources.gz
+SHA256:
+ 51aa28a4a460837045abf70a2f0033dd5308b6a0000568f00ecbc96d544755d3             1654 binary-all/Packages
+ c7eb6c857849f4d33304e4d9cab18243304b32ec4280e2264f35ccd7ae9391ce              972 binary-all/Packages.gz
+ e90c6b1e5397dcac025991f1e1a928ff4f08f56cb8fb53c818f87941c44b9155             2418 binary-amd64/Packages
+ c32e8c3ea63e03707f7799843680285b2c5765bbe1f90c633397a1a2f20eb074             1306 binary-amd64/Packages.gz
+ 882bae4415ed367a7290b3e96be44a378eb749eec6a26f4475653aaca27a569f             1800 source/Sources
+ c895ddf95c39ffacb0962006906945521c5580f40655fe369909079e2383e8fe              902 source/Sources.gz
+SHA512:
+ ed90c5fbba370c55af7d43f73c54a12ae866f634be484e115d7dfe578ec01ba75d18a16cb845559d9b00429bc8cfca9ea6761b62b2c00469502a1a9fcd916472             1654 binary-all/Packages
+ 68a346833b745a7480eec7b03d2187db75b208194da26d5da6f2a5bbd69cd52f8104ac391f6e70253b393c39d47ec6485a53b52b9014a29967150fed91d1b132              972 binary-all/Packages.gz
+ dbccd4572a3f7abdd44cb1c5073ec336b457869388dfb2a370a56f1bdca895d40e7894a5bc5615c0d8dc7d59fbadf17252f5819d9822a1d354bf0ab1060e8b93             2418 binary-amd64/Packages
+ d5e849e1d1974dceb41eeba9a6ea24b23d566fac81c45a639f697e93e318be7cfa8cb25c329cdbafd772a75b09c8d05030116441f301f93f15baa18b6eeae8a2             1306 binary-amd64/Packages.gz
+ 855697befe7ee5d68733e339395248eab5e444874d0646ca24a9c69b77e6fce3e998d0209c57f80ea937c0448464148489adad2aa42a1db1abd411e372b94d7c             1800 source/Sources
+ 8c9ffd339ddd65ee81176dc38109ac2df806160d33e3dcc8196a1d8dd8f98593a0437689237b55cc2fefffccdb3aa0dcc61db883c6774f038edf299e1dcc8921              902 source/Sources.gz
+-----BEGIN PGP SIGNATURE-----
+
+iIwEARMKADQWIQSbTL29oaJVKFPb8ingLOe3+t508gUCXLCY/hYcamFtZXNfcGlj
+QGhvdG1haWwuY29tAAoJEOAs57f63nTynHUBAOaN0IR1nrsq0SeK/a7+oPO8E5jf
+fHqEdTGx0+lnWNzDAP9c9UhWwTUVoBzdgpBbI/30NdN29T2VKshRoKB5ocLKdg==
+=J2Mk
+-----END PGP SIGNATURE-----
