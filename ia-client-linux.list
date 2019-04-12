@@ -1,0 +1,4 @@
+# This file was automatically created by http://github.com/jamespic/ia-client-linux
+
+deb https://jamespic.github.io/ia-client-linux bionic unofficial
+deb-src https://jamespic.github.io/ia-client-linux bionic unofficial
