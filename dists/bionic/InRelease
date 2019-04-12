@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Date: Fri, 12 Apr 2019 13:28:43 +0000
 MD5Sum:
  59ed1df3065d97de5918fedfc6184492              954 unofficial/binary-all/Packages.gz
@@ -27,3 +30,10 @@ SHA512:
  3bd5707a5086e08411858d3581a548e7e2ebecd298cbe635027b8cebcc8d3c104f51ae42293074dc5a0fe722b45d9544b933ae46b632e577e98d56c2b4f727d6              456 unofficial/binary-amd64/Release
  54ff9630bcca6471af8bbb13c354bd96ccc8aa62769731600032c2c60adbba65cdada7005d3828015442256ccc0c034dba1c0002d70b9bddfdb5524c5b07c105              452 unofficial/source/Release
  4aeabf48e120076da1a9e01cd469e54fad5d07b93bf820e8308e1fc9291adb911262c6b31b5bc74cbabd041c82f135f894b4bae40d8610981874d493890685bd              877 unofficial/source/Sources.gz
+-----BEGIN PGP SIGNATURE-----
+
+iIwEARMKADQWIQSbTL29oaJVKFPb8ingLOe3+t508gUCXLCSixYcamFtZXNfcGlj
+QGhvdG1haWwuY29tAAoJEOAs57f63nTyeREA/Rz7HDyspQQpBoMfGpkLjsYXv7Jp
+cf/2UPX50Qxl4AWFAP99U/Hsoxcnf5ppKJhzjnLJVbdBXGQjgMINTn5Chf65Uw==
+=vvuI
+-----END PGP SIGNATURE-----

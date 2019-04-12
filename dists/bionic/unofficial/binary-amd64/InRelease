@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Date: Fri, 12 Apr 2019 13:28:41 +0000
 MD5Sum:
  ceb87b03e195c3a1efa556cc58bf5729             1283 Packages.gz
@@ -7,3 +10,10 @@ SHA256:
  1843daf5ce457ca05d8c41e1182cd8ddca94ad478a9a50d8c1c8d5757391db50             1283 Packages.gz
 SHA512:
  c3afa88b22a4afb29f3e9244a201fa8bb902366cf64d86a4ea88f631db1d2e02f98dbf80cdfffba8b800163811a8ef3b308b277f5fe3043b74191069afe0aafc             1283 Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iIwEARMKADQWIQSbTL29oaJVKFPb8ingLOe3+t508gUCXLCSiRYcamFtZXNfcGlj
+QGhvdG1haWwuY29tAAoJEOAs57f63nTyNpYBAOB1VbP3xoF22cbfEJOgpPUEwh29
+31AeojzVMjooCfNaAPwPNpdvGNtlgU/lTbr59Nhjpfb4IDyz8N794YlfOi9q/Q==
+=AEb5
+-----END PGP SIGNATURE-----

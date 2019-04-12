@@ -3,7 +3,8 @@ make_release() {
   rm Release Release.gpg
   apt-ftparchive release . > /tmp/Release
   cp /tmp/Release Release
-  gpg -s Release
+  gpg --clearsign -o InRelease Release
+  gpg -abs -o Release.gpg Release
 }
 
 for packagedir in dists/bionic/unofficial/binary-*
