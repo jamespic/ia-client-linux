@@ -14,6 +14,8 @@ curl https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages/add-key
 sudo apt install ia-plugin-linux
 ```
 
+You will need to restart Chrome/Chromium to use the plugin.
+
 Building
 --------
 
