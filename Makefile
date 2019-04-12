@@ -16,9 +16,9 @@ clean:
 .PHONY: install
 install: build
 	mkdir -p "$(DESTDIR)/etc/chromium/native-messaging-hosts"
-	mkdir -p "$(DESTDIR)/etc/google-chrome/native-messaging-hosts"
+	mkdir -p "$(DESTDIR)/etc/opt/chrome/native-messaging-hosts"
 	cp dist-files/io.github.jamespic.ia_extension.json "$(DESTDIR)/etc/chromium/native-messaging-hosts"
-	cp dist-files/io.github.jamespic.ia_extension.json "$(DESTDIR)/etc/google-chrome/native-messaging-hosts"
+	cp dist-files/io.github.jamespic.ia_extension.json "$(DESTDIR)/etc/opt/chrome/native-messaging-hosts"
 
 	mkdir -p "$(DESTDIR)/usr/lib/ia-plugin"
 	cp native/* "$(DESTDIR)/usr/lib/ia-plugin"
@@ -34,7 +34,7 @@ install: build
 .PHONY: uninstall
 uninstall:
 	rm "$(DESTDIR)/etc/chromium/native-messaging-hosts/io.github.jamespic.ia_extension.json"
-	rm "$(DESTDIR)/etc/google-chrome/native-messaging-hosts/io.github.jamespic.ia_extension.json"
+	rm "$(DESTDIR)/etc/opt/chrome/native-messaging-hosts/io.github.jamespic.ia_extension.json"
 
 	rm -dr "$(DESTDIR)/usr/lib/ia-plugin"
 
