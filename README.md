@@ -4,12 +4,44 @@ Identity Agent Chrome Extension for Linux
 This is intended to be an implementation of an authentication extension for
 Chrome, compatible with NHS Digital's Identity Agent.
 
-Requirements (mostly a reminder to me - I'll stick it in a deb eventually)
---------------------------------------------------------------------------
+Getting Started
+---------------
 
-We use some packages from the NHoS repos:
+If you just want to use the Chrome extension:
 
 ```
-curl -s https://packagecloud.io/install/repositories/nhsbuntu/nhs-smartcards/script.deb.sh | sudo bash
-sudo apt install python3-dev pcscd libclassicclient libssl0.9.8 ifdokccid python3-pykcs11 python3-pyscard python3-asn1crypto # The last of these is not packaged for Xenial yet
+curl https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages/add-key.sh | sudo sh
+sudo apt install ia-plugin-linux
+```
+
+Building
+--------
+
+If you want to get started with development, you'll need a few dependencies:
+
+```
+# Add our repo - needed for some packages we borrowed from NHoS
+curl https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages/add-key.sh | sudo sh
+
+# Add Node repo
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+
+# Add Yarn repo
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+# And install the dependencies
+sudo apt install debhelper nodejs yarn python3-asn1crypto ifdokccid python3-pykcs11 python3-dev pcscd libclassicclient libssl0.9.8 git-buildpackage
+```
+
+To build and test locally:
+
+```
+make
+make install
+```
+
+If you want to test Ubuntu packaging, check out the `packaging` branch, then build with 
+```
+gbp buildpackage
 ```
