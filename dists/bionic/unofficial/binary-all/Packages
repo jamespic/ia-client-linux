@@ -7,7 +7,7 @@ Maintainer: James Pickering <james.pickering@airelogic.com>
 Installed-Size: 153
 Depends: python3-asn1crypto, ifdokccid, python3-pykcs11, python3-dev, pcscd, libclassicclient, libssl0.9.8
 Suggests: chromium-browser | google-chrome
-Filename: unofficial/binary-all/ia-plugin-linux_0.1.0-1_all.deb
+Filename: dists/bionic/unofficial/binary-all/ia-plugin-linux_0.1.0-1_all.deb
 Size: 113404
 MD5sum: 1c2e206db2d5ca8da369d1f68c123adb
 SHA1: db90dea0835ab6838854933025773d382ce8b08a
@@ -25,7 +25,7 @@ Priority: optional
 Section: unknown
 Maintainer: Rob Dyke <rob@neovahealth.co.uk>
 Installed-Size: 1148
-Filename: unofficial/binary-all/ifdokccid_4.2.8-1_all.deb
+Filename: dists/bionic/unofficial/binary-all/ifdokccid_4.2.8-1_all.deb
 Size: 295166
 MD5sum: f11d8dd0fab428891ef55fa4fc38612f
 SHA1: 7d79d33f85af8ffd11042e959e64c3abf92919ce
