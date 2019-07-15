@@ -10,7 +10,7 @@ Getting Started
 If you just want to use the Chrome extension:
 
 ```
-curl https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages/add-key.sh | sudo sh
+curl https://jamespic.github.io/ia-client-linux/add-repo.sh | sudo sh
 sudo apt install ia-plugin-linux
 ```
 
