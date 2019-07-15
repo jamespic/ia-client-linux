@@ -1,4 +1,4 @@
 # This file was automatically created by http://github.com/jamespic/ia-client-linux
 
-deb https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages bionic unofficial
-deb-src https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages bionic unofficial
+deb https://jamespic.github.io/ia-client-linux/ bionic unofficial
+deb-src https://jamespic.github.io/ia-client-linux/ bionic unofficial
