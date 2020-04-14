@@ -1,6 +1,6 @@
 {
   "name": "ia-chrome-extension-linux",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "A Chrome Extension to use NHS Digital's Identity Agent from Linux",
   "main": "index.js",
   "scripts": {
@@ -14,15 +14,15 @@
     "assert": "./microassert.js"
   },
   "dependencies": {
-    "choo": "^6.13.3",
+    "choo": "^7.1.0",
     "hyperscript": "^2.0.2",
     "isomorphic-fetch": "^2.2.1",
     "tachyons": "^4.11.1"
   },
   "browserslist": "chrome >= 66",
   "devDependencies": {
-    "crx3": "^1.0.1",
-    "parcel-bundler": "^1.12.3",
-    "pug": "^2.0.3"
+    "crx3": "^1.1.2",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4"
   }
 }
