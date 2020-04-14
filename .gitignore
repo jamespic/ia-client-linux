@@ -6,3 +6,8 @@ __pycache__
 extension/dist/
 yarn-error.log
 *.crx
+debian/files
+debian/ia-plugin-linux/
+debian/ia-plugin-linux.substvars
+debian/.debhelper/
+debhelper-build-stamp
