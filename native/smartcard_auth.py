@@ -54,7 +54,7 @@ class SmartcardAuth:
         if not slots:
             raise SlotException("No smartcard reader found")
         for slot in slots:
-            if self._pkcs.getSlotInfo(1).flags & PyKCS11.CKF_TOKEN_PRESENT:
+            if self._pkcs.getSlotInfo(slot).flags & PyKCS11.CKF_TOKEN_PRESENT:
                 return slot
         raise SlotException("No smartcard found in any slot")
 

@@ -1,6 +1,6 @@
 {
   "name": "Unofficial IA For Linux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An unofficial implementation of the NHS IA Authentication system for Linux",
   "background": {"scripts": ["background.js"], "persistent": true},
   "browser_action": {
