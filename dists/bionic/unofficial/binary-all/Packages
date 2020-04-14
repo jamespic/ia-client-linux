@@ -38,6 +38,26 @@ Description: A Chrome extension to enable smartcard login to NHS Digital systems
  A totally unofficial Chrome (and Chromium) extension, to enable smartcard login
  to systems that work with NHS Digital Identity Agent.
 
+Package: ia-plugin-linux
+Architecture: all
+Version: 0.1.2-1
+Priority: optional
+Section: unknown
+Maintainer: James Pickering <james.pickering@airelogic.com>
+Installed-Size: 153
+Depends: python3-asn1crypto, ifdokccid, python3-pykcs11, python3-dev, pcscd, libclassicclient, libssl0.9.8
+Suggests: chromium-browser | google-chrome
+Filename: dists/bionic/unofficial/binary-all/ia-plugin-linux_0.1.2-1_all.deb
+Size: 113124
+MD5sum: b579b79d3f34b0e448ebf583fc9a808d
+SHA1: 5e0e4f750db5dd4f728f2cf5e17a10084066a2bc
+SHA256: f761af449c509ad78aaa77ad8e2d7a47da96d8f7f8250747ffc6847bdb8572e1
+SHA512: d1c45588f3b8ef8e0db882447ce7b6ff9018bb6acc9aef346ab88490b08e686652b7d82918308e10f5cf46ecd3d10a9bad44020d94d9f50680b45a183e166a0c
+Homepage: https://github.com/jamespic/ia-client-linux
+Description: A Chrome extension to enable smartcard login to NHS Digital systems
+ A totally unofficial Chrome (and Chromium) extension, to enable smartcard login
+ to systems that work with NHS Digital Identity Agent.
+
 Package: ifdokccid
 Architecture: all
 Version: 4.2.8-1
