@@ -23,7 +23,7 @@ If you want to get started with development, you'll need a few dependencies:
 
 ```
 # Add our repo - needed for some packages we borrowed from NHoS
-curl https://raw.githubusercontent.com/jamespic/ia-client-linux/gh-pages/add-key.sh | sudo sh
+curl https://jamespic.github.io/ia-client-linux/add-repo.sh | sudo sh
 
 # Add Node repo
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
